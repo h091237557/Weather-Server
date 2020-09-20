@@ -1,0 +1,38 @@
+{
+  "name": "weather-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "web-start": "node src/app/index.js",
+    "cron-start": "node src/cron/index.js",
+    "test": "npx mocha tests/**/*.test.js --exit",
+    "docker-test": "docker-compose run web npm run test",
+    "eslint": "npx eslint src/** tests/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h091237557/Weather-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h091237557/Weather-Server/issues"
+  },
+  "homepage": "https://github.com/h091237557/Weather-Server#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "node-cron": "^2.0.3",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.1.3",
+    "sinon": "^9.0.3",
+    "supertest": "^4.0.2"
+  }
+}

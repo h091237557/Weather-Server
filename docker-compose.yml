@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  web:
+    image: node:13
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    command: npm run web-start
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_DBNAME=testing
+      - MONGODB_USER=root
+      - MONGODB_PWD=123456789
+      - NODE_ENV=development
+    links:
+      - "mongo"
+  cron:
+    image: node:13
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: npm run cron-start
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_DBNAME=testing
+      - MONGODB_USER=root
+      - MONGODB_PWD=123456789
+      - NODE_ENV=development
+    links:
+      - "mongo"
+  mongo:
+    image: mongo:4
+    ports:
+      - "27017:27017"
+    environment:
+     - MONGO_INITDB_DATABASE=testing
+     - MONGO_INITDB_ROOT_USERNAME=root
+     - MONGO_INITDB_ROOT_PASSWORD=123456789
