@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "docker-compose up -d",
+    "stop": "docker-compose down",
     "web-start": "node src/app/index.js",
     "cron-start": "node src/cron/index.js",
     "test": "npx mocha tests/**/*.test.js --exit",

@@ -14,10 +14,18 @@
 
 ## Quick Start
 
+**開啟服務**
+
 ```
 git clone https://github.com/h091237557/Weather-Server.git
 npm install
 npm run start
+```
+
+**關閉服務**
+
+```
+npm run stop
 ```
 
 ## API
@@ -50,4 +58,21 @@ curl 127.0.0.1:3000/weathers/01
 
 ```
 {"error":"Empty Resource Error"}
+```
+
+## Test
+
+```
+npm run docker-test
+
+Weather API Spec Test
+    Get /weathers/:city_code
+      ✓ should return correctly result (241ms)
+      ✓ should return 404 http code, when the city is invalid
+
+  Cron Fetch Weather Task Test
+    ✓ should return correctly result, when the task work (117ms)
+
+
+  3 passing (836ms)
 ```
