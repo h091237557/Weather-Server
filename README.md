@@ -2,6 +2,8 @@
 
 此專案為定時的至[自動氣象站-氣象觀測資料](https://opendata.cwb.gov.tw/dataset/observation/O-A0001-001)取得氣象資料，並且提供 API 給用戶查詢。
 
+### 詳細設計請[參閱此文章](https://github.com/h091237557/Weather-Server/wiki)
+
 ## Tech
 
 * Nodejs V13.1
